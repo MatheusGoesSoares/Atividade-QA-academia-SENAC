@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório QA — Academia Fitness</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,sans-serif;background:#f0f2f5;color:#333}
+    header{background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;padding:30px;text-align:center}
+    header h1{font-size:2.1em} header p{opacity:.8;margin-top:6px}
+    .wrap{max-width:1200px;margin:28px auto;padding:0 20px}
+    .cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:22px}
+    .card{background:#fff;padding:20px;border-radius:10px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+    .card .val{font-size:2.4em;font-weight:bold}
+    .card .lbl{color:#666;font-size:.85em;margin-top:4px}
+    .prog{background:#e9ecef;border-radius:8px;height:8px;margin-top:8px}
+    .prog-bar{height:100%;border-radius:8px;background:#28a745;width:100.0%}
+    .box{background:#fff;padding:24px;border-radius:10px;margin-bottom:22px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+    .box h2{color:#1a1a2e;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #e8e8e8}
+    .decisao-wrap{text-align:center}
+    .badge-dec{display:inline-block;padding:14px 36px;border-radius:8px;font-size:1.7em;font-weight:bold;color:#fff;background:#28a745}
+    .badge-dec-txt{margin-top:12px;color:#555}
+    table{width:100%;border-collapse:collapse;font-size:.88em}
+    th{background:#1a1a2e;color:#fff;padding:11px 9px;text-align:left}
+    td{padding:9px;border-bottom:1px solid #eee;vertical-align:top}
+    tr:nth-child(even){background:#f9f9f9} tr:hover{background:#eef2ff}
+    .leg{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
+    .leg-i{display:flex;align-items:center;gap:7px;font-size:.85em}
+    .dot{width:11px;height:11px;border-radius:50%}
+    footer{text-align:center;padding:18px;color:#888;font-size:.82em}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Relatório de Qualidade de Software</h1>
+    <p>Academia Fitness &mdash; Gerado em 05/10/2026 às 19:46:19</p>
+  </header>
+
+  <div class="wrap">
+    <!-- Métricas -->
+    <div class="cards">
+      <div class="card"><div class="val" style="color:#1a1a2e">12</div><div class="lbl">Total de Testes</div></div>
+      <div class="card"><div class="val" style="color:#28a745">12</div><div class="lbl">Aprovados (PASS)</div></div>
+      <div class="card"><div class="val" style="color:#dc3545">0</div><div class="lbl">Reprovados (FAIL)</div></div>
+      <div class="card"><div class="val" style="color:#dc3545">0</div><div class="lbl">Falhas Críticas</div></div>
+      <div class="card">
+        <div class="val" style="color:#28a745">100.0%</div>
+        <div class="lbl">Taxa de Aprovação</div>
+        <div class="prog"><div class="prog-bar"></div></div>
+      </div>
+    </div>
+
+    <!-- Decisão QA -->
+    <div class="box">
+      <h2>Decisão Final de QA</h2>
+      <div class="decisao-wrap">
+        <div class="badge-dec">&#10003; LIBERADO</div>
+        <p class="badge-dec-txt">Sistema aprovado em todos os testes. Pode ser liberado para produção.</p>
+      </div>
+    </div>
+
+    <!-- Tabela de casos de teste -->
+    <div class="box">
+      <h2>Casos de Teste Executados</h2>
+      <table>
+        <tr>
+          <th>ID</th><th>Funcionalidade</th><th>Descrição</th>
+          <th>Resultado Esperado</th><th>Resultado Obtido</th>
+          <th style="text-align:center">Status</th>
+          <th style="text-align:center">Severidade</th>
+          <th style="text-align:center">Modo</th>
+          <th style="text-align:center">Horário</th>
+        </tr>
+        
+        <tr>
+          <td><strong>TC001</strong></td>
+          <td>Interface Web</td>
+          <td>Verificar se a página carrega com título e as 5 abas de navegação</td>
+          <td>Título visível e 5 abas exibidas corretamente</td>
+          <td>Título: "Academia Fitness" | Abas: 5</td>
+          <td style="color:#28a745;font-weight:bold;text-align:center">PASS</td>
+          <td style="color:#6c757d;font-weight:bold;text-align:center">-</td>
+          <td style="color:#0d6efd;font-weight:bold;text-align:center">UI</td>
+          <td style="text-align:center">19:44:50</td>
+        </tr>
+        <tr>
+          <td><strong>TC002</strong></td>
+          <td>RF01 - Cadastro de Membros</td>
+          <td>Preencher formulário de cadastro com dados válidos e submeter</td>
+          <td>Formulário aceito e mensagem de sucesso exibida na tela</td>
+          <td>Membro Ana Lima cadastrado com sucesso</td>
+          <td style="color:#28a745;font-weight:bold;text-align:center">PASS</td>
+          <td style="color:#6c757d;font-weight:bold;text-align:center">-</td>
+          <td style="color:#0d6efd;font-weight:bold;text-align:center">UI</td>
+          <td style="text-align:center">19:44:57</td>
+        </tr>
+        <tr>
+          <td><strong>TC003</strong></td>
+          <td>RF01 - Cadastro de Membros</td>
+          <td>Submeter formulário com CPF já cadastrado</td>
+          <td>Mensagem de erro de CPF duplicado exibida na tela</td>
+          <td>CPF já cadastrado no sistema</td>
+          <td style="color:#28a745;font-weight:bold;text-align:center">PASS</td>
+          <td style="color:#6c757d;font-weight:bold;text-align:center">-</td>
+          <td style="color:#0d6efd;font-weight:bold;text-align:center">UI</td>
+          <td style="text-align:center">19:45:03</td>
+        </tr>
+        <tr>
+          <td><strong>TC004</strong></td>
+          <td>RF01 - Cadastro de Membros</td>
+          <td>Submeter formulário com campo idade preenchido como 14</td>
+          <td>Mensagem de erro com idade mínima (16 anos) exibida na tela</td>
+          <td>Idade mínima para cadastro é 16 anos</td>
+          <td style="color:#28a745;font-weight:bold;text-align:center">PASS</td>
+          <td style="color:#6c757d;font-weight:bold;text-align:center">-</td>
+          <td style="color:#0d6efd;font-weight:bold;text-align:center">UI</td>
+          <td style="text-align:center">19:45:10</td>
+        </tr>
+        <tr>
+          <td><strong>TC005</strong></td>
+          <td>RF01 - Cadastro de Membros</td>
+          <td>Injetar opção de plano inválido "diario" no select via JS e submeter</td>
+          <td>Servidor rejeita o plano inválido mesmo com manipulação de HTML</td>
+          <td>Plano inválido. Opções: mensal, trimestral, anual</td>
+          <td style="color:#28a745;font-weight:bold;text-align:center">PASS</td>
+          <td style="color:#6c757d;font-weight:bold;text-align:center">-</td>
+          <td style="color:#0d6efd;font-weight:bold;text-align:center">UI</td>
+          <td style="text-align:center">19:45:18</td>
+        </tr>
+        <tr>
+          <td><strong>TC006</strong></td>
+          <td>RF02 - Check-in</td>
+          <td>Preencher CPF de membro ativo na aba Check-in e submeter</td>
+          <td>Check-in realizado e mensagem de sucesso exibida na tela</td>
+          <td>Check-in realizado com sucesso</td>
+          <td style="color:#28a745;font-weight:bold;text-align:center">PASS</td>
+          <td style="color:#6c757d;font-weight:bold;text-align:center">-</td>
+          <td style="color:#0d6efd;font-weight:bold;text-align:center">UI</td>
+          <td style="text-align:center">19:45:25</td>
+        </tr>
+        <tr>
+          <td><strong>TC007</strong></td>
+          <td>RF03 - Cancelamento</td>
+          <td>Preencher CPF na aba de Cancelamento e submeter</td>
+          <td>Matrícula cancelada e mensagem de sucesso exibida na tela</td>
+          <td>Matrícula cancelada com sucesso</td>
+          <td style="color:#28a745;font-weight:bold;text-align:center">PASS</td>
+          <td style="color:#6c757d;font-weight:bold;text-align:center">-</td>
+          <td style="color:#0d6efd;font-weight:bold;text-align:center">UI</td>
+          <td style="text-align:center">19:45:32</td>
+        </tr>
+        <tr>
+          <td><strong>TC008</strong></td>
+          <td>RF02 - Check-in</td>
+          <td>Tentar check-in na interface com CPF de matrícula cancelada</td>
+          <td>Interface exibe mensagem de erro: matrícula cancelada</td>
+          <td>Matrícula cancelada. Renove para realizar check-in</td>
+          <td style="color:#28a745;font-weight:bold;text-align:center">PASS</td>
+          <td style="color:#6c757d;font-weight:bold;text-align:center">-</td>
+          <td style="color:#0d6efd;font-weight:bold;text-align:center">UI</td>
+          <td style="text-align:center">19:45:39</td>
+        </tr>
+        <tr>
+          <td><strong>TC009</strong></td>
+          <td>RF02 - Check-in</td>
+          <td>Preencher CPF não cadastrado na aba Check-in e submeter</td>
+          <td>Interface exibe mensagem de erro: membro não encontrado</td>
+          <td>Membro não encontrado no sistema</td>
+          <td style="color:#28a745;font-weight:bold;text-align:center">PASS</td>
+          <td style="color:#6c757d;font-weight:bold;text-align:center">-</td>
+          <td style="color:#0d6efd;font-weight:bold;text-align:center">UI</td>
+          <td style="text-align:center">19:45:47</td>
+        </tr>
+        <tr>
+          <td><strong>TC010</strong></td>
+          <td>RF03 - Cancelamento</td>
+          <td>Preencher CPF não cadastrado na aba Cancelamento e submeter</td>
+          <td>Interface exibe mensagem de erro: membro não encontrado</td>
+          <td>Membro não encontrado no sistema</td>
+          <td style="color:#28a745;font-weight:bold;text-align:center">PASS</td>
+          <td style="color:#6c757d;font-weight:bold;text-align:center">-</td>
+          <td style="color:#0d6efd;font-weight:bold;text-align:center">UI</td>
+          <td style="text-align:center">19:45:56</td>
+        </tr>
+        <tr>
+          <td><strong>TC011</strong></td>
+          <td>RF04 - Renovação de Plano</td>
+          <td>Preencher CPF e selecionar plano anual na aba Renovação e submeter</td>
+          <td>Plano renovado e mensagem de sucesso exibida na tela</td>
+          <td>Plano renovado para anual com sucesso</td>
+          <td style="color:#28a745;font-weight:bold;text-align:center">PASS</td>
+          <td style="color:#6c757d;font-weight:bold;text-align:center">-</td>
+          <td style="color:#0d6efd;font-weight:bold;text-align:center">UI</td>
+          <td style="text-align:center">19:46:05</td>
+        </tr>
+        <tr>
+          <td><strong>TC012</strong></td>
+          <td>RF04 - Renovação de Plano</td>
+          <td>Preencher CPF não cadastrado na aba Renovação e submeter</td>
+          <td>Interface exibe mensagem de erro: membro não encontrado</td>
+          <td>Membro não encontrado no sistema</td>
+          <td style="color:#28a745;font-weight:bold;text-align:center">PASS</td>
+          <td style="color:#6c757d;font-weight:bold;text-align:center">-</td>
+          <td style="color:#0d6efd;font-weight:bold;text-align:center">UI</td>
+          <td style="text-align:center">19:46:14</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Legenda -->
+    <div class="box">
+      <h2>Legenda de Severidade e Critérios de Decisão</h2>
+      <div class="leg">
+        <div class="leg-i"><div class="dot" style="background:#dc3545"></div><span><strong>CRÍTICA</strong> — Falha compromete segurança ou integridade dos dados</span></div>
+        <div class="leg-i"><div class="dot" style="background:#fd7e14"></div><span><strong>ALTA</strong> — Falha compromete funcionalidade principal</span></div>
+        <div class="leg-i"><div class="dot" style="background:#ffc107"></div><span><strong>MÉDIA</strong> — Inconveniência, não bloqueia o sistema</span></div>
+        <div class="leg-i"><div class="dot" style="background:#28a745"></div><span><strong>BAIXA</strong> — Impacto mínimo, sem risco operacional</span></div>
+      </div>
+      <ul style="margin-top:16px;margin-left:18px;color:#555;line-height:1.9">
+        <li><strong>LIBERADO</strong> — 0 falhas</li>
+        <li><strong>LIBERADO COM RESSALVAS</strong> — Apenas falhas não-críticas</li>
+        <li><strong>NÃO LIBERAR</strong> — Pelo menos 1 falha CRÍTICA</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>Relatório gerado automaticamente pelo sistema de QA &mdash; Academia Fitness</footer>
+</body>
+</html>
