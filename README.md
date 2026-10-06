@@ -121,7 +121,7 @@ python run_qa.py --bug --headless  # sem browser, com bug
 
 ### RF01 — Cadastro de Membros
 
-Permite registrar um novo membro informando nome, CPF, idade e plano.
+Dá permissão para registrar um novo membro informando nome, CPF, idade e plano.
 
 | Regra | Descrição |
 |---|---|
